@@ -3,11 +3,12 @@ Cek Gempa Terkini
 
 Cara Penggunaan :
 
-python3 cgempa.py
+```python3 cgempa.py```
 
-untuk menjalankan dari system
+Untuk Menjalankan dari System :
+
+```sh
 mv cgempa.py cgempa
 chmod +x cgempa
-mv cgempa /usr/bin
 
-Author : Alfin
+mv cgempa /usr/bin
