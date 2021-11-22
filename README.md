@@ -1,4 +1,4 @@
-## cgempa
+# cgempa
 Cek Gempa Terkini
 
 Cara Penggunaan :
