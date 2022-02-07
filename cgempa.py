@@ -2,8 +2,8 @@
 import json
 import requests as rq
 
-req = rq.get ("https://data.bmkg.go.id/DataMKG/TEWS/autogempa.json")
-data = json.loads(req.text)
+u = rq.get ("https://data.bmkg.go.id/DataMKG/TEWS/autogempa.json")
+data = json.loads(u.text)
 
 Bujur = data["Infogempa"]["gempa"]["Bujur"]
 Koordinat = data["Infogempa"]["gempa"]["Coordinates"]
