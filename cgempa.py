@@ -1,15 +1,23 @@
 #!/usr/bin/env python3
-import itertools
-import threading
-import time
-import sys
-import requests
 import json
-import os
+import requests as rq
 
-os.system('clear')
+req = rq.get ("https://data.bmkg.go.id/DataMKG/TEWS/autogempa.json")
+data = json.loads(req.text)
 
-a = ("""
+Bujur = data["Infogempa"]["gempa"]["Bujur"]
+Koordinat = data["Infogempa"]["gempa"]["Coordinates"]
+HariWaktu = data["Infogempa"]["gempa"]["DateTime"]
+Jam = data["Infogempa"]["gempa"]["Jam"]
+Kedalaman = data["Infogempa"]["gempa"]["Kedalaman"]
+Lintang = data["Infogempa"]["gempa"]["Lintang"]
+Magnitude = data["Infogempa"]["gempa"]["Magnitude"]
+Dirasakan = data["Infogempa"]["gempa"]["Dirasakan"]
+Potensi = data["Infogempa"]["gempa"]["Potensi"]
+Tanggal = data["Infogempa"]["gempa"]["Tanggal"]
+Wilayah = data["Infogempa"]["gempa"]["Wilayah"]
+
+print(f"""
    ___
   / __\__ _  ___ _ __ ___  _ __   __ _
  / /  / _` |/ _ \ '_ ` _ \| '_ \ / _` |
@@ -17,32 +25,35 @@ a = ("""
 \____/\__, |\___|_| |_| |_| .__/ \__,_|
       |___/               |_|
 
-------Cek Informasi Gempa Terbaru------
+     Cek Informasi Gempa Terkini
 
-Twitter : alfin_kresna
-IG      : alfin.kresna_
+          Created by Alfin
+
+
+>> Info Gempa <<
+
+> Tanggal : {Tanggal}
+
+> Jam : {Jam}
+
+> Hari/Waktu : {HariWaktu}
+
+> Koordinat : {Koordinat}
+
+> Lintang : {Lintang}
+
+> Bujur : {Bujur}
+
+> Magnitude : {Magnitude}
+
+> Kedalaman : {Kedalaman}
+
+> Wilayah : {Wilayah}
+
+> Potensi : {Potensi}
+
+> Dirasakan : {Dirasakan}
+
 """)
-print(a)
 
-done = False
-def animate():
-    for c in itertools.cycle(['|', '/', '-', '\\']):
-        if done:
-            break
-        sys.stdout.write('\rMemuat Data ' + c)
-        sys.stdout.flush()
-        time.sleep(0.1)
-
-t = threading.Thread(target=animate)
-t.start()
-
-time.sleep(3)
-done = True
-print()
-print()
-response = requests.get("https://data.bmkg.go.id/DataMKG/TEWS/autogempa.json")
-json_response = response.json()
-i = json.dumps(json_response, indent=4)
-i = json.dumps(response.json(), indent=4)
-print(i)
 print()
