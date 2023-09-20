@@ -1,0 +1,6 @@
+
+{
+	"gempa terbaru" : "https://data.bmkg.go.id/DataMKG/TEWS/autogempa.json",
+	"gempa terkini" : "https://data.bmkg.go.id/DataMKG/TEWS/gempaterkini.json",
+	"gempa dirasakan" : "https://data.bmkg.go.id/DataMKG/TEWS/gempadirasakan.json"	
+}
