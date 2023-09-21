@@ -108,7 +108,7 @@ def main():
 		elif choice == 0:
 			exit("\n\033[1;31m[!] K e l u a r  P r o g r a m [!]\033[0m")
 		else:
-			print("\n[!] Pilih 1-2")
+			print("\n[!] Pilih 0-3")
 			continue
 	
 if __name__ == '__main__' :
